@@ -1,8 +1,8 @@
 namespace bahbashApp.Views;
 
-public partial class SignInPage : ContentPage
+public partial class SignInView : ContentPage
 {
-	public SignInPage()
+	public SignInView()
 	{
 		InitializeComponent();
 	}

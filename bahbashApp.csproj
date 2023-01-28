@@ -58,7 +58,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\SignInPage.xaml">
+	  <Compile Update="Views\SignInView.xaml.cs">
+	    <DependentUpon>SignInView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\SignInView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

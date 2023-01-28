@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="SignIn"
-        ContentTemplate="{DataTemplate views:SignInPage}"
+        ContentTemplate="{DataTemplate views:SignInView}"
         Route="MainPage" />
 
 </Shell>
