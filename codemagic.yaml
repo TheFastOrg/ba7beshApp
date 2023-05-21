@@ -17,7 +17,7 @@
         script: | 
           wget https://dot.net/v1/dotnet-install.sh
           chmod +x dotnet-install.sh
-          ./dotnet-install.sh --install-dir $DOTNET_PATH
+          ./dotnet-install.sh --install-dir $DOTNET_PATH --version 7.0.0
       - name: Install MAUI
         script: | 
           $DOTNET nuget locals all --clear 
