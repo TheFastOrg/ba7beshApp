@@ -27,7 +27,7 @@
       - name: Build
         script: | 
           UPDATED_BUILD_NUMBER=$BUILD_NUMBER
-          $DOTNET publish -f net6.0-android \
+          $DOTNET publish -f net6.0-android33.0 \
             -c Release \
             -p:AndroidKeyStore=True \
             -p:AndroidSigningKeyStore=$CM_KEYSTORE_PATH \
