@@ -17,7 +17,7 @@
         script: | 
           wget https://dot.net/v1/dotnet-install.sh
           chmod +x dotnet-install.sh
-          ./dotnet-install.sh --install-dir $DOTNET_PATH --version 7.0.0
+          ./dotnet-install.sh --install-dir $DOTNET_PATH
       - name: Install MAUI
         script: | 
           $DOTNET nuget locals all --clear 
@@ -27,7 +27,7 @@
       - name: Build
         script: | 
           UPDATED_BUILD_NUMBER=$BUILD_NUMBER
-          $DOTNET publish -f net7.0-android \
+          $DOTNET publish -f net6.0-android \
             -c Release \
             -p:AndroidKeyStore=True \
             -p:AndroidSigningKeyStore=$CM_KEYSTORE_PATH \
