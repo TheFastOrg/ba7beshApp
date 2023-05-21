@@ -5,7 +5,7 @@
     instance_type: mac_mini_m1
     environment:
       android_signing:
-        - codemagic-key
+        - ba7besh_beta
       groups:
         - google_play
       vars:
