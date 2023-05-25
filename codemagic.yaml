@@ -21,7 +21,7 @@
       - name: Install MAUI
         script: | 
           $DOTNET nuget locals all --clear 
-          $DOTNET workload install android maui   
+          $DOTNET workload install maui   
       - name: Build
         script: | 
           UPDATED_BUILD_NUMBER=$BUILD_NUMBER
