@@ -42,7 +42,7 @@ jobs:
         run: dotnet restore bahbashApp.csproj
 
       - name: Build MAUI Android
-        run: dotnet publish bahbashApp.csproj -c Release -f net7.0-android -p:AndroidKeyStore=True -p:AndroidSigningKeyStore=ba7besh_beta.keystore -p:AndroidSigningKeyAlias=${{secrets.keystorealias}} -p:AndroidSigningKeyPass=${{secrets.keystorepassword}} -p:AndroidSigningStorePass=${{secrets.keystorepassword}} --no-restore
+        run: dotnet publish bahbashApp.csproj -c Release -f net7.0-android -p:AndroidKeyStore=True -p:AndroidSigningKeyStore=ba7besh_beta.keystore -p:AndroidSigningKeyAlias=${{secrets.KEYSTOREALIAS}} -p:AndroidSigningKeyPass=${{secrets.KEYSTOREPASSWORD}} -p:AndroidSigningStorePass=${{secrets.KEYSTOREPASSWORD}} --no-restore
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v3
