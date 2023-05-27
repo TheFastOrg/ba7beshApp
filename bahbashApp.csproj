@@ -32,6 +32,13 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningKeyStore>ba7besh_beta.keystore</AndroidSigningKeyStore>
+	  <AndroidSigningKeyAlias></AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass></AndroidSigningKeyPass>
+	  <AndroidSigningStorePass></AndroidSigningStorePass>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -73,4 +80,11 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include=".github\" />
+	  <Folder Include=".github\workflows\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include=".github\workflows\ci-build.yml" />
+	</ItemGroup>
 </Project>
