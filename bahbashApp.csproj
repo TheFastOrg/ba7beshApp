@@ -79,5 +79,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include=".github\workflows\ci-build.yml" />
+	  <None Include=".github\workflows\cd-build.yml" />
 	</ItemGroup>
 </Project>
