@@ -46,7 +46,7 @@ jobs:
 
       - name: Sign dev build
         shell: bash
-        run: jarsigner -keystore ./release.decrypted.jks -storepass ${{ secrets.RELEASE_KEYSTORE_PASSWORD }} -keypass ${{ secrets.RELEASE_KEYSTORE_PASSWORD }} -signedjar 'bin/Release/net7.0-android/publish/signed.aab' 'bin/Release/net7.0-android/publish/com.fastorg.ba7besh.aab' ${{ secrets.RELEASE_KEYSTORE_ALIAS }}
+        run: jarsigner -keystore ./release.decrypted.jks -storepass '${{ secrets.RELEASE_KEYSTORE_PASSWORD }}' -keypass '${{ secrets.RELEASE_KEYSTORE_PASSWORD }}' -signedjar 'bin/Release/net7.0-android/publish/signed.aab' 'bin/Release/net7.0-android/publish/com.fastorg.ba7besh.aab' ${{ secrets.RELEASE_KEYSTORE_ALIAS }}
 
       - name: Upload Android Artificats
         uses: actions/upload-artifact@v3
