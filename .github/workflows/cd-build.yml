@@ -34,6 +34,13 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore bahbashApp.csproj
 
+      - name: Update AndroidManifest.xml
+        uses: damienaicheh/update-android-version-manifest-action@v1.0.0
+        with:
+            android-manifest-path: './Platforms/Android/AndroidManifest.xml'
+            version-code: ${{ github.run_number }}
+            version-name: ${{ vars.APP_VERSION }}
+
       - name: Build MAUI Mobile App
         shell: bash
         run: dotnet publish bahbashApp.csproj -f:net7.0-android -c:Release
