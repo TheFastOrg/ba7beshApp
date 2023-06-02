@@ -43,9 +43,9 @@ jobs:
         run: dotnet build ./bahbashApp/bahbashApp.csproj -bl:mobile.binlog
 
       - name: Build and Run UnitTests
-          run: |
-          dotnet build ./bahbashApp.Tests/bahbashApp.Tests.csproj
-          dotnet test ./bahbashApp.Tests/bahbashApp.Tests.csproj --no-build --verbosity normal
+        run: |
+        dotnet build ./bahbashApp.Tests/bahbashApp.Tests.csproj
+        dotnet test ./bahbashApp.Tests/bahbashApp.Tests.csproj --no-build --verbosity normal
 
       - name: Upload Archive build log
         uses: actions/upload-artifact@v3
