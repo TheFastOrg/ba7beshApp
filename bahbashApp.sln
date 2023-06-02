@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1704.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bahbashApp", "bahbashApp\bahbashApp.csproj", "{5F748072-98C0-43D2-807A-AC7E096BC4F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bahbashApp.Tests", "bahbashApp.Tests\bahbashApp.Tests.csproj", "{4474F798-F80F-48A0-96F1-D78D2A89170A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4474F798-F80F-48A0-96F1-D78D2A89170A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4474F798-F80F-48A0-96F1-D78D2A89170A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4474F798-F80F-48A0-96F1-D78D2A89170A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4474F798-F80F-48A0-96F1-D78D2A89170A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -44,7 +44,12 @@ jobs:
       - name: Build MAUI Mobile App
         shell: bash
         run: dotnet publish ./bahbashApp/bahbashApp.csproj -f:net7.0-android -c:Release
-
+      
+      - name: Build and Run UnitTests
+          run: |
+          dotnet build ./bahbashApp.Tests/bahbashApp.Tests.csproj
+          dotnet test ./bahbashApp.Tests/bahbashApp.Tests.csproj --no-build --verbosity normal
+      
       - name: Extract Android signing key from env
         shell: bash
         run: |
