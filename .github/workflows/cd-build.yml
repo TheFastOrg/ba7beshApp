@@ -32,7 +32,7 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore bahbashApp.csproj
+        run: dotnet restore ./bahbashApp/bahbashApp.csproj
 
       - name: Update AndroidManifest.xml
         uses: damienaicheh/update-android-version-manifest-action@v1.0.0
