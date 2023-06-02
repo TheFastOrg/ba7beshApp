@@ -25,6 +25,16 @@ jobs:
     name: Android Build
     steps:
 
+      - name: Notify the mobile team - build started
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          # mobile-team channel id
+          channel-id: 'C058KACR6H4'
+          slack-message: "GitHub build started: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -53,3 +63,14 @@ jobs:
         with:
           name: logs
           path: '*.binlog'
+      
+      - name: Notify the mobile team - build result
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          # mobile-team channel id
+          channel-id: 'C058KACR6H4'
+          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+      
