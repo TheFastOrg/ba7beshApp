@@ -1,4 +1,4 @@
-﻿name: CD Build
+name: CD Build
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -37,13 +37,13 @@ jobs:
       - name: Update AndroidManifest.xml
         uses: damienaicheh/update-android-version-manifest-action@v1.0.0
         with:
-            android-manifest-path: './Platforms/Android/AndroidManifest.xml'
+            android-manifest-path: './bahbashApp/Platforms/Android/AndroidManifest.xml'
             version-code: ${{ github.run_number }}
             version-name: ${{ vars.APP_VERSION }}
 
       - name: Build MAUI Mobile App
         shell: bash
-        run: dotnet publish bahbashApp.csproj -f:net7.0-android -c:Release
+        run: dotnet publish ./bahbashApp/bahbashApp.csproj -f:net7.0-android -c:Release
 
       - name: Extract Android signing key from env
         shell: bash
@@ -53,10 +53,10 @@ jobs:
 
       - name: Sign dev build
         shell: bash
-        run: jarsigner -keystore ./release.decrypted.jks -storepass '${{ secrets.RELEASE_KEYSTORE_PASSWORD }}' -keypass '${{ secrets.RELEASE_KEYSTORE_PASSWORD }}' -signedjar 'bin/Release/net7.0-android/publish/signed.aab' 'bin/Release/net7.0-android/publish/com.fastorg.ba7besh.aab' ${{ secrets.RELEASE_KEYSTORE_ALIAS }}
+        run: jarsigner -keystore ./release.decrypted.jks -storepass '${{ secrets.RELEASE_KEYSTORE_PASSWORD }}' -keypass '${{ secrets.RELEASE_KEYSTORE_PASSWORD }}' -signedjar './bahbashApp/bin/Release/net7.0-android/publish/signed.aab' './bahbashApp/bin/Release/net7.0-android/publish/com.fastorg.ba7besh.aab' ${{ secrets.RELEASE_KEYSTORE_ALIAS }}
 
       - name: Upload Android Artificats
         uses: actions/upload-artifact@v3
         with:
           name: artifacts-android
-          path: bin\Release\net7.0-android\publish\signed.aab
+          path: .\bahbashApp\bin\Release\net7.0-android\publish\signed.aab

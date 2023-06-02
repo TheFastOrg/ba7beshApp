@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1704.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bahbashApp", "bahbashApp.csproj", "{992934AB-C463-42B9-B388-757CC1727434}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bahbashApp", "bahbashApp\bahbashApp.csproj", "{5F748072-98C0-43D2-807A-AC7E096BC4F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{992934AB-C463-42B9-B388-757CC1727434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{992934AB-C463-42B9-B388-757CC1727434}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{992934AB-C463-42B9-B388-757CC1727434}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{992934AB-C463-42B9-B388-757CC1727434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F748072-98C0-43D2-807A-AC7E096BC4F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

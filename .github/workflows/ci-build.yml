@@ -1,4 +1,4 @@
-﻿name: CI Build
+name: CI Build
 
 on:
   push:
@@ -37,10 +37,10 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore bahbashApp.csproj
+        run: dotnet restore ./bahbashApp/bahbashApp.csproj
 
       - name: Build MAUI Mobile App
-        run: dotnet build bahbashApp.csproj -bl:mobile.binlog
+        run: dotnet build ./bahbashApp/bahbashApp.csproj -bl:mobile.binlog
 
       - name: Upload Archive build log
         uses: actions/upload-artifact@v3

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -76,14 +76,5 @@
 	  <MauiXaml Update="Views\SignInView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include=".github\" />
-	  <Folder Include=".github\workflows\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Include=".github\workflows\ci-build.yml" />
-	  <None Include=".github\workflows\cd-build.yml" />
 	</ItemGroup>
 </Project>
