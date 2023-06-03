@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="bahbashApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,9 +7,13 @@
     xmlns:views="clr-namespace:bahbashApp.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="SignIn"
+    <FlyoutItem >
+        <ShellContent Title="Sign-In"
         ContentTemplate="{DataTemplate views:SignInView}"
-        Route="MainPage" />
+                      Route="login"/>
+    </FlyoutItem>
 
+    <TabBar Route="main">
+        <ShellContent Title="PROFILE" Route="profile" ContentTemplate="{DataTemplate views:ProfileView}" />
+    </TabBar>
 </Shell>

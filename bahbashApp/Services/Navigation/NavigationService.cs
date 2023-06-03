@@ -1,10 +1,20 @@
 ﻿
+using bahbashApp.Services.Authentication;
+
 namespace bahbashApp.Services.Navigation
 {
     internal class NavigationService : INavigationService
     {
-        public Task InitializeAsync() =>
-        NavigateToAsync("//Login" );
+        private readonly IAuthenticationService authenticationService;
+
+        public NavigationService(IAuthenticationService authenticationService)
+        {
+            this.authenticationService = authenticationService;
+        }
+
+        public Task InitializeAsync() => !authenticationService.IsAuthenticated ? 
+        NavigateToAsync("//login" ) :
+            NavigateToAsync("//main/profile");
 
         public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)
         {

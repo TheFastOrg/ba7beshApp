@@ -3,7 +3,7 @@ using bahbashApp.Services.Navigation;
 
 namespace bahbashApp.ViewModels.Base
 {
-    internal class ViewModelBase : IViewModelBase
+    public class ViewModelBase : ObservableObject
     {
         public INavigationService NavigationService { get; private set; }
         public ViewModelBase( INavigationService navigationService)
