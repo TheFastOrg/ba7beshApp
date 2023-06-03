@@ -66,3 +66,7 @@ jobs:
         with:
           name: artifacts-android
           path: .\bahbashApp\bin\Release\net7.0-android\publish\signed.aab
+
+      - name: Distribute the app to internal people
+        shell: bash
+        run: appcenter distribute release —silent —file './bahbashApp/bin/Release/net7.0-android/publish/signed.aab' —app 'FastOrg/Ba7besh-Android-Alpha' —group Internal —token ${{ secrets.APP_CENTER_TOKEN }}
