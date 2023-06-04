@@ -72,4 +72,4 @@ jobs:
         
       - name: Distribute the app to internal people
         shell: bash
-        run: appcenter distribute release —silent —file './bahbashApp/bin/Release/net7.0-android/publish/signed.aab' —app 'FastOrg/Ba7besh-Android-Alpha' —group Internal —token ${{ secrets.APP_CENTER_TOKEN }}
+        run: appcenter distribute release -f ./bahbashApp/bin/Release/net7.0-android/publish/signed.aab -g internal --app fastorg/ba7besh-android-alpha --token ${{ secrets.APP_CENTER_TOKEN }} --quiet --silent
