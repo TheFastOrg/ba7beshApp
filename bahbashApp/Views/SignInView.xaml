@@ -4,6 +4,7 @@
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:views="clr-namespace:bahbashApp.Views"
                        xmlns:viewModels="clr-namespace:bahbashApp.ViewModels"
+                       xmlns:resources="clr-namespace:bahbashApp.Resources.Strings"
                        x:Class="bahbashApp.Views.SignInView"
                        x:DataType="viewModels:LoginViewModel"
                        Shell.NavBarIsVisible="False"
@@ -49,7 +50,7 @@
 
                 <Button CornerRadius="0"
                         HeightRequest="60" 
-                        Text="SIGN IN" 
+                        Text="{x:Static resources:AppResources.SignIn}" 
                         FontSize="20" 
                         FontAttributes="Bold"
                         Command="{Binding SignInCommand}" />
