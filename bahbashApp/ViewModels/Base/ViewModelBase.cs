@@ -1,18 +1,58 @@
 ﻿
 using bahbashApp.Services.Navigation;
 
-namespace bahbashApp.ViewModels.Base
+namespace bahbashApp.ViewModels.Base;
+
+public abstract partial class ViewModelBase : ObservableObject, IViewModelBase
 {
-    public class ViewModelBase : ObservableObject
+    private long _isBusy;
+
+    public bool IsBusy => Interlocked.Read(ref _isBusy) > 0;
+
+    [ObservableProperty]
+    private bool _isInitialized;
+
+    public INavigationService NavigationService { get; }
+
+    public IAsyncRelayCommand InitializeAsyncCommand { get; }
+
+    public ViewModelBase(INavigationService navigationService)
     {
-        public INavigationService NavigationService { get; private set; }
-        public ViewModelBase( INavigationService navigationService)
+        NavigationService = navigationService;
+
+        InitializeAsyncCommand =
+            new AsyncRelayCommand(
+                async () =>
+                {
+                    await IsBusyFor(InitializeAsync);
+                    IsInitialized = true;
+                },
+                AsyncRelayCommandOptions.FlowExceptionsToTaskScheduler);
+    }
+
+    public virtual void ApplyQueryAttributes(IDictionary<string, object> query)
+    {
+    }
+
+    public virtual Task InitializeAsync()
+    {
+        return Task.CompletedTask;
+    }
+
+    public async Task IsBusyFor(Func<Task> unitOfWork)
+    {
+        Interlocked.Increment(ref _isBusy);
+        OnPropertyChanged(nameof(IsBusy));
+
+        try
         {
-            NavigationService = navigationService;
+            await unitOfWork();
         }
-        public void ApplyQueryAttributes(IDictionary<string, object> query)
+        finally
         {
-            throw new NotImplementedException();
+            Interlocked.Decrement(ref _isBusy);
+            OnPropertyChanged(nameof(IsBusy));
         }
     }
 }
+

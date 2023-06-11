@@ -1,13 +1,10 @@
 namespace bahbashApp.Views;
 
-public partial class SignInView : ContentPage
+public partial class SignInView : ContentPageBase
 {
-	public SignInView()
+	public SignInView(LoginViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
-    private async void TapGestureRecognizer_SignUP(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("//SignUp");
-    }
 }

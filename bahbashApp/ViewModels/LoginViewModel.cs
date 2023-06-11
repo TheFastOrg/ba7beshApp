@@ -1,22 +1,23 @@
-﻿
-
-using bahbashApp.Services.Navigation;
+﻿using bahbashApp.Services.Navigation;
 using bahbashApp.ViewModels.Base;
-using CommunityToolkit.Mvvm.Input;
-using System.Windows.Input;
 
-namespace bahbashApp.ViewModels
+namespace bahbashApp.ViewModels;
+
+public partial class LoginViewModel : ViewModelBase
 {
-    internal class LoginViewModel : ViewModelBase
+    public LoginViewModel(INavigationService navigationService) : base(navigationService)
     {
-        public ICommand SignInCommand { get; }
-        public LoginViewModel(INavigationService navigationService) : base( navigationService)
-        {
-           SignInCommand = new AsyncRelayCommand(SignInAsync);
-        }
-        private async Task SignInAsync()
-        {
-            await Task.Delay(10);
-        }
+    }
+
+    [RelayCommand]
+    private async Task SignIn()
+    {
+        await NavigationService.NavigateToAsync("//profile");
+    }
+
+    [RelayCommand]
+    private async Task SignUp()
+    {
+        await NavigationService.NavigateToAsync("//profile");
     }
 }

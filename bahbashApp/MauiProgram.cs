@@ -31,8 +31,7 @@ public static class MauiProgram
 	}
 
 
-
-    public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
+    private static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddSingleton<INavigationService, NavigationService>();
         mauiAppBuilder.Services.AddSingleton<ISettingsService, SettingsService>();
@@ -40,7 +39,7 @@ public static class MauiProgram
         return mauiAppBuilder;
     }
 
-    public static MauiAppBuilder RegisterPages(this MauiAppBuilder mauiAppBuilder)
+    private static MauiAppBuilder RegisterPages(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddTransient<AppShell>();
         mauiAppBuilder.Services.AddTransientWithShellRoute<SignInView, LoginViewModel>("login");

@@ -1,9 +1,10 @@
 ﻿namespace bahbashApp.Views;
 
-public partial class ProfileView : ContentPage
+public partial class ProfileView : ContentPageBase
 {
-	public ProfileView()
+	public ProfileView(ProfileViewModel viewModel)
 	{
 		InitializeComponent();
+		BindingContext = viewModel;
 	}
 }
