@@ -8,6 +8,14 @@
                  x:DataType="viewModels:WelcomeViewModel"
                  Shell.NavBarIsVisible="False"
                  Title="WelcomeView">
+    <ContentPage.Resources>
+        <Style x:Key="WelcomeImageStyle" TargetType="Image">
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Aspect" Value="AspectFit"/>
+            <Setter Property="Source" Value="email"/>
+        </Style>
+    </ContentPage.Resources>
     <Grid RowDefinitions="20*,50*,30*" 
           Padding="15, 5"
           RowSpacing="10">
@@ -22,11 +30,8 @@
             <Label FontSize="Title" Text="{x:Static strings:AppResources.WelcomeHeader}"/>
             <Label FontSize="Header" Text="{x:Static strings:AppResources.WelcomeDescription}"/>
         </VerticalStackLayout>
-        <Image Source="email"
-                   Grid.Row="1" 
-                   HorizontalOptions="Fill"
-                   VerticalOptions="Center"
-                   Aspect="AspectFit"/>
+        <Image     Grid.Row="1" 
+                   Style="{StaticResource WelcomeImageStyle}"/>
         <VerticalStackLayout Grid.Row="2" Spacing="5">
             <Label Text="{x:Static strings:AppResources.TermsAndConditionsText}"
                    FontSize="Micro"
