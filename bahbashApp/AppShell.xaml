@@ -9,9 +9,9 @@
     FlyoutBehavior="Disabled">
 
     <FlyoutItem>
-        <ShellContent Title="Sign-In"
-                      ContentTemplate="{DataTemplate views:SignInView}"
-                      Route="login" />
+        <ShellContent Title="Welcome"
+                      ContentTemplate="{DataTemplate views:WelcomeView}"
+                      Route="welcome" />
     </FlyoutItem>
 
     <TabBar>

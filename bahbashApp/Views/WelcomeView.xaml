@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:views="clr-namespace:bahbashApp.Views"
+                 xmlns:strings="clr-namespace:bahbashApp.Resources.Strings"
+                 xmlns:viewModels="clr-namespace:bahbashApp.ViewModels"
+                 x:Class="bahbashApp.Views.WelcomeView"
+                 x:DataType="viewModels:WelcomeViewModel"
+                 Shell.NavBarIsVisible="False"
+                 Title="WelcomeView">
+    <Grid RowDefinitions="20*,50*,30*" 
+          Padding="15, 5"
+          RowSpacing="10">
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Label HorizontalOptions="End" 
+                   TextDecorations="Underline"
+                   Text="{x:Static strings:AppResources.Skip}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SkipCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label FontSize="Title" Text="{x:Static strings:AppResources.WelcomeHeader}"/>
+            <Label FontSize="Header" Text="{x:Static strings:AppResources.WelcomeDescription}"/>
+        </VerticalStackLayout>
+        <Image Source="email"
+                   Grid.Row="1" 
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit"/>
+        <VerticalStackLayout Grid.Row="2" Spacing="5">
+            <Label Text="{x:Static strings:AppResources.TermsAndConditionsText}"
+                   FontSize="Micro"
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="{x:Static strings:AppResources.ContinueWithFacebook}"/>
+            <Button Text="{x:Static strings:AppResources.ContinueWithGoogle}"/>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button Grid.Column="0" Text="{x:Static strings:AppResources.SignIn}"/>
+                <Button Grid.Column="1" Text="{x:Static strings:AppResources.SignUp}"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</views:ContentPageBase>

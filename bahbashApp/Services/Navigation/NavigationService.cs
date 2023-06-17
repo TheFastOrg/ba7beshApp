@@ -13,8 +13,8 @@ namespace bahbashApp.Services.Navigation
         }
 
         public Task InitializeAsync() => !authenticationService.IsAuthenticated ? 
-        NavigateToAsync("//login" ) :
-            NavigateToAsync("//main/profile");
+        NavigateToAsync("//welcome" ) :
+            NavigateToAsync("//profile");
 
         public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)
         {

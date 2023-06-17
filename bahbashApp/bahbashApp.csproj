@@ -36,6 +36,9 @@
 	  <RunAOTCompilation>true</RunAOTCompilation>
 	  <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
+	  <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
@@ -81,6 +84,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\SignInView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\WelcomeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

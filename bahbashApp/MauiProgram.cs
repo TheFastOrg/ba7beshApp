@@ -44,6 +44,7 @@ public static class MauiProgram
         mauiAppBuilder.Services.AddTransient<AppShell>();
         mauiAppBuilder.Services.AddTransientWithShellRoute<SignInView, LoginViewModel>("login");
         mauiAppBuilder.Services.AddTransientWithShellRoute<ProfileView, ProfileViewModel>("profile");
+        mauiAppBuilder.Services.AddTransientWithShellRoute<WelcomeView, WelcomeViewModel>("welcome");
         return mauiAppBuilder;
     }
 }
