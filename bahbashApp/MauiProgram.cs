@@ -4,6 +4,7 @@ using bahbashApp.Views;
 using bahbashApp.Services.Navigation;
 using bahbashApp.Services.Settings;
 using bahbashApp.Services.Authentication;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace bahbashApp;
 
@@ -15,10 +16,12 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
+            .UseSkiaSharp()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont(filename: "materialdesignicons-webfont.ttf", alias: "MaterialDesignIcons");
             })
             .RegisterAppServices()
             .RegisterPages();
