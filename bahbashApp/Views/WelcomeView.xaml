@@ -64,9 +64,11 @@
                 <Label Text="{x:Static strings:AppResources.TermsAndConditionsText}"
                        Style="{StaticResource TermsLabelStyle}" />
                 <Button Style="{StaticResource FacebookButtonStyle}"
-                        Text="{x:Static strings:AppResources.ContinueWithFacebook}" />
+                        Text="{x:Static strings:AppResources.ContinueWithFacebook}"
+                        Command="{Binding FacebookCommand}"/>
                 <Button Style="{StaticResource GoogleButtonStyle}"
-                        Text="{x:Static strings:AppResources.ContinueWithGoogle}" />
+                        Text="{x:Static strings:AppResources.ContinueWithGoogle}"
+                        Command="{Binding GoogleCommand}"/>
                 <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
                     <Button Grid.Column="0"
                             Text="{x:Static strings:AppResources.SignIn}"
